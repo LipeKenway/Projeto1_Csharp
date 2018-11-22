@@ -1,0 +1,13 @@
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\bin\Debug\Carboss_Automotive__Ver.Final_.exe.config
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\bin\Debug\Carboss_Automotive__Ver.Final_.exe
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\bin\Debug\Carboss_Automotive__Ver.Final_.pdb
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss Automotive (Ver. Final).csprojAssemblyReference.cache
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss_Automotive__Ver.Final_.frmLogin.resources
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss_Automotive__Ver.Final_.Properties.Resources.resources
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss Automotive (Ver. Final).csproj.GenerateResource.cache
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss Automotive (Ver. Final).csproj.CoreCompileInputs.cache
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss_Automotive__Ver.Final_.exe
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss_Automotive__Ver.Final_.pdb
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss_Automotive__Ver.Final_.frmHome.resources
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss_Automotive__Ver.Final_.frmOrcamento.resources
+D:\Developer\Projects\C#\Projects\Carboss Automotive (Ver. Final)\Carboss Automotive (Ver. Final)\obj\Debug\Carboss_Automotive__Ver.Final_.frmIniSistema.resources
