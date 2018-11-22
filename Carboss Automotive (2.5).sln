@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carboss Automotive (2.5)", "Carboss Automotive (Ver. Final)\Carboss Automotive (2.5).csproj", "{95CA148C-8B9C-4C2C-AA82-E0B5BA946155}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95CA148C-8B9C-4C2C-AA82-E0B5BA946155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CA148C-8B9C-4C2C-AA82-E0B5BA946155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CA148C-8B9C-4C2C-AA82-E0B5BA946155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CA148C-8B9C-4C2C-AA82-E0B5BA946155}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ADEC9DB-A83D-479D-A0D0-8FE3114D2513}
+	EndGlobalSection
+EndGlobal
