@@ -1,0 +1,92 @@
+FORM 2
+
+
+private void menuSobre_Click(object sender, EventArgs e)
+        {
+            string sobre = "Criado e Desenvolvido por Felipe Soares e Vitor Barbosa";
+
+            MessageBox.Show(sobre, "Carboss Automotive",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1);
+        }
+
+        private void linkAjuda_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string ajuda = "Clique em (Novo) depois em (Orçamento) e pronto, agora você poderá fazer seu orçamento.";
+
+            MessageBox.Show(ajuda, "Carboss Automotive",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1);
+        }
+
+        private void menuOrcamento_Click(object sender, EventArgs e)
+        {
+            NovoOrcamento OutroForm = new NovoOrcamento();
+            this.Hide();
+            OutroForm.ShowDialog();
+            
+        }
+
+        private void menuLogout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Obrigado pela Confiança.", "Carboss Automotive");
+            
+        }
+    }
+}
+
+
+
+
+
+
+=======================================
+
+FORM 3       
+
+
+        Point ArrastarCursor;
+        Point ArrastarForm;
+        bool Arrastando;
+
+        private void menuSobre_Click(object sender, EventArgs e)
+        {
+            string sobre = "Criado e Desenvolvido por Felipe Soares e Vitor Barbosa";
+
+            MessageBox.Show(sobre, "Carboss Automotive",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1);
+        }
+
+        private void menuOrcamento_MouseUp(object sender, MouseEventArgs e)
+        {
+            Arrastando = false;
+        }
+
+        private void menuOrcamento_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Arrastando == true)
+            {
+                Point diferenca = Point.Subtract(Cursor.Position, new Size(ArrastarCursor));
+                this.Location = Point.Add(ArrastarForm, new Size(diferenca));
+            }
+        }
+
+        private void menuOrcamento_MouseDown(object sender, MouseEventArgs e)
+        {
+            Arrastando = true;
+            ArrastarCursor = Cursor.Position;
+            ArrastarForm = this.Location;
+        }
+
+        private void menuInicio_Click(object sender, EventArgs e)
+        {
+            FrmCarboss OutroAnterior = new FrmCarboss();
+            this.Hide();
+            OutroAnterior.ShowDialog();
+        }
+    }
+}

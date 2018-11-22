@@ -1,0 +1,514 @@
+/*
+# =========================================================================================================== #
+                                                Ideia inicial era fazer com o Checkbox mas não deu muito certo então preferi usa os buttons como está no programa agora
+# =========================================================================================================== #
+Inspeção: R$ 15,00
+Revisão de Lubrificação: R$ 18,00
+Alinhamento do Pneu: R$ 20,00
+Troca de Óleo: R$ 26,00
+Revisão do Radiador: R$ 30,00
+Nivelamento de Transmissão: R$ 80,00
+Substituição do Silenciador: R$ 100,00
+
+# =========================================================================================================== #
+# ================================ Form Principal ================================================================== #
+
+
+private void menuSair_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Obrigado pela Confiança.", "Carboss Automotive");
+            Application.Exit();
+        }
+
+        private void menuOrcamento_Click(object sender, EventArgs e)
+        {
+
+             Orcamento OutroForm = new Orcamento();
+             OutroForm.ShowDialog();
+             this.Close();
+
+        }
+
+        private void menuSobre_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Criado por Felipe e Vitor", "Carboss Automotive");
+        }
+
+        private void frmCarboss_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkAjuda_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Clique em (Novo) depois em (Orçamento) e pronto, agora você poderá fazer seu orçamento ",
+                "Carboss Automotive");
+        }
+
+       
+    }
+}
+
+
+frmCarboss frmAnterior = new frmCarboss();
+               this.Hide(); // Fechar Form
+               frmAnterior.ShowDialog();
+
+
+
+############################################# Algumas Anotações para não perder #####################################################
+# Button Para desmarcar checkbox's
+# radioSelecionar.Checked = false;
+#               ckInspeção.Checked = false;
+#               ckLubrificacao.Checked = false;
+#               ckOleo.Checked = false;
+#               ckPneu.Checked = false;
+#               ckRadiador.Checked = false;
+#               ckTransmissao.Checked = false;
+#               ckSilenciador.Checked = false;
+# ==================================================================================================================================== #
+# RadioButton para selecionar todas as opções do checkbox's
+
+    if (radioSelecionar.Checked)
+            {
+                isChecked = radioSelecionar.Checked;
+
+                ckInspeção.Checked = true;
+                ckLubrificacao.Checked = true;
+                ckOleo.Checked = true;
+                ckPneu.Checked = true;
+                ckRadiador.Checked = true;
+                ckTransmissao.Checked = true;
+                ckSilenciador.Checked = true;
+
+
+            }
+# ==================================================================================================================================== #
+# Checkbox
+
+                 ////////////////////// SOMA DE TUDO //////////////////////////
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                string mensagem = "Seu orçamento ficou R$";
+                string aviso = "Só um momento iremos fazer a soma para você";
+                double[] opcoes = new double[7];
+
+                opcoes[0] = 15f;
+                opcoes[1] = 18f;
+                opcoes[2] = 20f;
+                opcoes[3] = 26f;
+                opcoes[4] = 30f;
+                opcoes[5] = 80f;
+                opcoes[6] = 100f;
+
+                double somarTudo = opcoes.Sum();
+
+                // Mensagem de Aviso //
+                MessageBox.Show(aviso, "Carboss Automotive",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1);
+
+                MessageBox.Show(mensagem + somarTudo, "Carboss Automotive");
+            }
+        }
+
+# ==================================================================================================================================== #
+# checkbox pt.2
+
+    string mensagem = "Seu orçamento ficou R$";
+            string msgError = "Selecione uma opção !!!";
+            double[] opcoes = new double[7];
+            double[] total0 = new double[7];
+            double[] total1 = new double[6];
+            double[] total2 = new double[5];
+            double[] total3 = new double[4];
+            double[] total4 = new double[3];
+            double[] total5 = new double[3];
+            double[] total6 = new double[1];
+
+            double[] totalA = new double[5];
+            double[] totalB = new double[5];
+
+
+            ///////////////////////////////////////// 2 OPÇÕES ////////////////////////////////////////////////
+
+            opcoes[0] = 15f;
+            opcoes[1] = 18f;
+            opcoes[2] = 20f;
+            opcoes[3] = 26f;
+            opcoes[4] = 30f;
+            opcoes[5] = 80f;
+            opcoes[6] = 100f;
+
+            total0[0] = opcoes[0];
+            total0[1] = opcoes[1];
+            total0[2] = opcoes[2];
+            total0[3] = opcoes[3];
+            total0[4] = opcoes[4];
+            total0[5] = opcoes[5];
+            total0[6] = opcoes[6];
+
+
+            total1[0] = opcoes[0] + opcoes[1];
+            total1[1] = opcoes[0] + opcoes[2];
+            total1[2] = opcoes[0] + opcoes[3];
+            total1[3] = opcoes[0] + opcoes[4];
+            total1[4] = opcoes[0] + opcoes[5];
+            total1[5] = opcoes[0] + opcoes[6];
+
+            total2[0] = opcoes[1] + opcoes[2];
+            total2[1] = opcoes[1] + opcoes[3];
+            total2[2] = opcoes[1] + opcoes[4];
+            total2[3] = opcoes[1] + opcoes[5];
+            total2[4] = opcoes[1] + opcoes[6];
+
+            total3[0] = opcoes[2] + opcoes[3];
+            total3[1] = opcoes[2] + opcoes[4];
+            total3[2] = opcoes[2] + opcoes[5];
+            total3[3] = opcoes[2] + opcoes[6];
+
+            total4[0] = opcoes[3] + opcoes[4];
+            total4[1] = opcoes[3] + opcoes[5];
+            total4[2] = opcoes[3] + opcoes[6];
+
+            total5[0] = opcoes[4] + opcoes[5];
+            total5[1] = opcoes[4] + opcoes[6];
+
+            total6[0] = opcoes[5] + opcoes[6];
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+            totalA[0] = opcoes[0] + opcoes[1] + opcoes[2];
+            totalA[1] = opcoes[0] + opcoes[1] + opcoes[3];
+            totalA[2] = opcoes[0] + opcoes[1] + opcoes[4];
+            totalA[3] = opcoes[0] + opcoes[1] + opcoes[5];
+            totalA[4] = opcoes[0] + opcoes[1] + opcoes[6];
+
+            totalB[0] = opcoes[0] + opcoes[1] + opcoes[2];
+            totalB[1] = opcoes[0] + opcoes[1] + opcoes[3];
+            totalB[2] = opcoes[0] + opcoes[1] + opcoes[4];
+            totalB[3] = opcoes[0] + opcoes[1] + opcoes[5];
+            totalB[4] = opcoes[0] + opcoes[1] + opcoes[6];
+
+
+            ////////////////////// OPÇÕES UNICAS /////////////////////////////
+
+            if (ckInspeção.CheckState == CheckState.Checked)
+                {
+                    MessageBox.Show(mensagem + total0[0], "Carboss Automotive");
+
+                }
+                else if (ckLubrificacao.CheckState == CheckState.Checked)
+                {
+                    MessageBox.Show(mensagem + total0[1], "Carboss Automotive");
+                }
+
+                else if (ckPneu.CheckState == CheckState.Checked)
+                {
+
+                    MessageBox.Show(mensagem + total0[2], "Carboss Automotive");
+                }
+
+                else if (ckOleo.CheckState == CheckState.Checked)
+                {
+
+                    MessageBox.Show(mensagem + total0[3], "Carboss Automotive");
+                }
+
+                else if (ckRadiador.CheckState == CheckState.Checked)
+                {
+
+                    MessageBox.Show(mensagem + total0[4], "Carboss Automotive");
+                }
+
+                else if (ckTransmissao.CheckState == CheckState.Checked)
+                {
+
+                    MessageBox.Show(mensagem + total0[5], "Carboss Automotive");
+                }
+
+                else if (ckSilenciador.CheckState == CheckState.Checked)
+                {
+
+                    MessageBox.Show(mensagem + total0[6], "Carboss Automotive");
+                }
+
+
+                else
+                {
+                    // Mensagem de Erro //
+                    MessageBox.Show(msgError, "Carboss Automotive",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
+                }   
+
+
+                      ///////////////////////////////// 2 OPÇÕES /////////////////////////////////////////
+                            ////////////////////////////////////////////////////////////////////  
+                                   //////////////////// INSPEÇÃO /////////////////////////////
+
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckLubrificacao.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + total1[0], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + total1[1], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total1[2], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total1[3], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total1[4], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total1[5], "Carboss Automotive");
+            }
+
+                         /////////////////////// LUBRIFICAÇÃO /////////////////////////////
+
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total2[0], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total2[1], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total2[2], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total2[3], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total2[4], "Carboss Automotive");
+            }
+
+                        /////////////////////// PNEU /////////////////////////////
+
+            if (ckPneu.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total3[0], "Carboss Automotive");
+            }
+
+            if (ckPneu.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total3[1], "Carboss Automotive");
+            }
+
+            if (ckPneu.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total3[2], "Carboss Automotive");
+            }
+
+            if (ckPneu.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total3[3], "Carboss Automotive");
+            }
+
+                            /////////////////////// ÓLEO /////////////////////////////
+
+            if (ckOleo.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total4[0], "Carboss Automotive");
+            }
+
+            if (ckOleo.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total4[1], "Carboss Automotive");
+            }
+
+            if (ckOleo.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total4[2], "Carboss Automotive");
+            }
+
+                        /////////////////////// RADIADOR /////////////////////////////
+
+
+            if (ckRadiador.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total5[0], "Carboss Automotive");
+            }
+
+            if (ckRadiador.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total5[1], "Carboss Automotive");
+            }
+
+                        /////////////////////// TRANSMISSÃO ////////////////////////////         
+
+            if (ckTransmissao.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + total6[0], "Carboss Automotive");
+            }
+
+                        ///////////////////////////////// 3 OPÇÕES /////////////////////////////////////////
+                              ////////////////////////////////////////////////////////////////////  
+                                     //////////////////// INSPEÇÃO /////////////////////////////
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalA[0], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckLubrificacao.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalA[1], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckLubrificacao.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + totalA[2], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckLubrificacao.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+
+            { 
+                MessageBox.Show(mensagem + totalA[3], "Carboss Automotive");
+            }
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckLubrificacao.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + totalA[4], "Carboss Automotive");
+            }
+
+                                             //////////////////// LUBRIFICAÇÃO /////////////////////////////
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalB[0], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalB[1], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + totalB[2], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+
+            {
+                MessageBox.Show(mensagem + totalB[3], "Carboss Automotive");
+            }
+
+            if (ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + totalB[4], "Carboss Automotive");
+            }
+
+                                          //////////////////// PNEU /////////////////////////////
+
+            if (ckPneu.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalB[0], "Carboss Automotive");
+            }
+
+            if (ckPneu.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalB[1], "Carboss Automotive");
+            }
+
+            if (ckPneu.CheckState == CheckState.Checked && ckOleo.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+
+                MessageBox.Show(mensagem + totalB[2], "Carboss Automotive");
+            }
+
+
+                                             //////////////////// ÓLEO /////////////////////////////
+
+            if (ckOleo.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalB[0], "Carboss Automotive");
+            }
+
+            if (ckOleo.CheckState == CheckState.Checked && ckRadiador.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalB[1], "Carboss Automotive");
+            }
+
+
+                                             //////////////////// RADIADOR /////////////////////////////
+
+            if (ckRadiador.CheckState == CheckState.Checked && ckTransmissao.CheckState == CheckState.Checked && ckSilenciador.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalB[0], "Carboss Automotive");
+            }
+
+
+                                            //////////////////// 4 OPÇÕES /////////////////////////////
+
+            if (ckInspeção.CheckState == CheckState.Checked && ckLubrificacao.CheckState == CheckState.Checked && ckPneu.CheckState == CheckState.Checked)
+            {
+                MessageBox.Show(mensagem + totalA[0], "Carboss Automotive");
+            }
+
+
+
+        }
+
+        private void menuProblemas_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Não conseguimos resolver o problema do checkbox, " +
+            "que acontece quando seleciono 2 deles aparece junto o valor do primeiro checkbox.",
+            "Carboss Automotive",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1);
+
+
+*/
